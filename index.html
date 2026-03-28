@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piyush Dubey | Backend Engineer</title>
-    <meta name="description" content="Portfolio of Piyush Dubey, Backend Engineer">
+    <title>Piyush Dubey | Platform, Backend & AI Systems</title>
+    <meta name="description" content="Portfolio of Piyush Dubey. I build platform and backend systems, distributed infrastructure, and practical AI tooling for engineering teams.">
     
     <style>
         /* --- CSS VARIABLES (Enhanced Backend/Terminal Theme) --- */
@@ -416,6 +416,56 @@ header {
             box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
         }
 
+        /* --- EXPERIENCE (Resume Highlights) --- */
+        .experience-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .experience-card {
+            background: linear-gradient(135deg, #0f0f13 0%, #1a1a24 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--terminal-red), var(--accent-cyan));
+        }
+
+        .experience-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .experience-meta {
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-highlights {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .experience-highlights li {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
         /* --- BLOG (Enhanced Server Logs) --- */
         .blog-table {
             width: 100%;
@@ -622,7 +672,7 @@ header {
             <h1>Piyush Dubey</h1>
             
             <p class="hero-subtitle">
-                I am a Backend Engineer specializing in distributed systems, database architecture, and API design. I optimize performance and ensure data integrity.
+                I build reliable platforms, high-performance APIs, and distributed systems that operate across multiple regions. Most recently, that means shaping cross-region delivery infrastructure at Oracle OCI and practical AI tooling that helps engineering teams move faster.
             </p>
             
             <div class="nav-actions">
@@ -630,7 +680,14 @@ header {
                 <div class="magnetic-wrap">
                     <a href="#about" class="magnetic-btn">
                         <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                        ./about_me
+                        ./about
+                    </a>
+                </div>
+
+                <div class="magnetic-wrap">
+                    <a href="#experience" class="magnetic-btn">
+                        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V8a2 2 0 0 0-2-2zm-10-2h4v2h-4V4zm10 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4h16v4zm0-6H4V8h16v3z"/></svg>
+                        ./selected_impact
                     </a>
                 </div>
 
@@ -638,7 +695,7 @@ header {
                 <div class="magnetic-wrap">
                     <a href="#blog" class="magnetic-btn">
                         <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                        ./linkedin_posts
+                        ./notes
                     </a>
                 </div>
 
@@ -665,51 +722,113 @@ header {
             <div class="section-title">
                 <span class="section-number">01.</span>
                 <!-- Blinking Cursor Added Here -->
-                <h2>User_Profile</h2>
+                <h2>About</h2>
             </div>
             <div class="grid-2">
                 <div class="about-text">
-                    <p>> Initializing profile...</p>
-                    <p>I am a Staff Backend Engineer with expertise in distributed systems, microservices architecture, and large-scale systems. I design and optimize high-performance infrastructure serving millions of users globally.</p>
-                    <p>Currently at <strong>Oracle</strong> (OCI) as a Staff Software Engineer. Previously led backend initiatives at <strong>Microsoft</strong> (M365, Outlook Groups & Copilot team), architected solutions at <strong>Adobe</strong>, and built scalable systems at <strong>TCS</strong>.</p>
-                    <p>My focus: designing resilient APIs, optimizing databases, implementing microservices patterns, and AI agentic solutions at scale. I transform complex business requirements into efficient, maintainable backend systems.<span class="cursor-blink">_</span></p>
+                    <p>> Loading current focus...</p>
+                    <p>I am a Bangalore-based engineer working across <strong>platform engineering</strong>, <strong>backend systems</strong>, and <strong>applied AI</strong>. I like building the things that sit on the critical path: release orchestration, event pipelines, search systems, internal tooling, and the APIs that tie them together.</p>
+                    <p>Right now, I work as a <strong>Principal Member of Technical Staff</strong> at <strong>Oracle OCI</strong>, shaping developer experience and continuous delivery infrastructure at global scale. The work spans orchestration services, cross-region architecture, Kafka-backed event flows, reliability improvements, and latency reduction where it has visible impact.</p>
+                    <p>Across Oracle, Microsoft, Adobe, and earlier enterprise systems work, the pattern has stayed consistent: take an operationally messy problem, design a system that can scale, and make it simpler for both users and engineers. Lately that also includes AI agents, MCP-based tooling, and practical automation that reduces turnaround time instead of just adding hype.<span class="cursor-blink">_</span></p>
                     
                 </div>
                 <div class="skills-terminal">
-                    <h3>./tech_stack --list</h3>
+                    <h3>./capabilities --list</h3>
                     <ul class="skill-list">
                         <li class="skill-item">Java</li>
                         <li class="skill-item">Python</li>
+                        <li class="skill-item">Go</li>
                         <li class="skill-item">C#</li>
-                        <li class="skill-item">Bash</li>
+                        <li class="skill-item">Kafka</li>
+                        <li class="skill-item">Docker</li>
+                        <li class="skill-item">Kubernetes</li>
                         <li class="skill-item">PostgreSQL</li>
+                        <li class="skill-item">Oracle</li>
+                        <li class="skill-item">Cassandra</li>
                         <li class="skill-item">Redis</li>
                         <li class="skill-item">LangChain</li>
-                        <li class="skill-item">Temporal</li>
-                        <li class="skill-item">Docker/K8s</li>
-                        <li class="skill-item">AWS/OCI</li>
+                        <li class="skill-item">MCP</li>
+                        <li class="skill-item">OpenAI GPT</li>
+                        <li class="skill-item">Codex</li>
+                        <li class="skill-item">Claude</li>
+                        <li class="skill-item">OCI</li>
+                        <li class="skill-item">AWS</li>
+                        <li class="skill-item">Azure</li>
                         <li class="skill-item">REST</li>
                         <li class="skill-item">Microservices</li>
+                        <li class="skill-item">Event-Driven Systems</li>
                         <li class="skill-item">System Design</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-title">
+                <span class="section-number">02.</span>
+                <h2>Selected_Impact</h2>
+            </div>
+            <div class="about-text">
+                <p>A few areas where I have spent most of my time recently: platform reliability, developer productivity, and backend systems operating at real scale.</p>
+            </div>
+            <div class="experience-list">
+                <article class="experience-card">
+                    <h3>Cross-Region Release Platform</h3>
+                    <p class="experience-meta">Oracle OCI | Platform Engineering</p>
+                    <ul class="experience-highlights">
+                        <li>I build orchestration services and APIs behind OCI's continuous delivery platform, supporting deployments across 25 regions and roughly 100K monthly releases.</li>
+                        <li>I designed Kafka-backed event flows for CI/CD workloads so the platform could support cross-region delivery with strong durability guarantees.</li>
+                        <li>I also pushed reliability and latency work, including service decomposition and targeted caching for high-traffic cross-region API paths.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-card">
+                    <h3>AI Tooling That Engineers Actually Use</h3>
+                    <p class="experience-meta">Oracle OCI | Applied AI + Developer Experience</p>
+                    <ul class="experience-highlights">
+                        <li>I built internal AI agent workflows for operational support and developer tooling using LangChain, MCP, OpenAI GPT, Codex, and Claude.</li>
+                        <li>The goal was faster execution, not novelty, and the result was materially lower turnaround time and less engineering effort for the team.</li>
+                        <li>That work also included Python and Java tooling, MCP server support, and mentoring engineers on where AI helps and where it just adds noise.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-card">
+                    <h3>Search and Collaboration at Microsoft Scale</h3>
+                    <p class="experience-meta">Microsoft 365 | Backend + AI Platform</p>
+                    <ul class="experience-highlights">
+                        <li>I owned architecture for the Groups AI Platform powering semantic search and Q&amp;A experiences for more than 220M monthly active users.</li>
+                        <li>I drove API and retrieval optimizations that improved group creation latency by 70% and led execution across Outlook, Teams, and SharePoint.</li>
+                        <li>I also shipped lifecycle capabilities that helped enterprise customers reduce subscription cost overhead.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-card">
+                    <h3>Globalization, Messaging, and Data Foundations</h3>
+                    <p class="experience-meta">Adobe + Earlier Systems Work</p>
+                    <ul class="experience-highlights">
+                        <li>At Adobe, I built real-time translation services supporting 31 locales at 50K QPS, along with Kafka-based event pipelines designed for retries and dead-letter handling.</li>
+                        <li>I also worked on globalization and messaging integrations that helped teams ship internationally faster and drove strong adoption in the Japan market.</li>
+                        <li>Earlier in my career, I built healthcare data workflows and learned the foundations that still shape how I approach reliability, validation, and delivery.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
         <!-- LinkedIn Posts Section -->
         <section id="blog">
             <div class="section-title">
-                <span class="section-number">02.</span>
-                <h2>LinkedIn_Posts</h2>
+                <span class="section-number">03.</span>
+                <h2>Notes</h2>
             </div>
             <div class="about-text">
                 <p>
-                    Insights on distributed systems, backend engineering, and system design.
+                    I write occasionally about platform engineering, distributed systems, backend architecture, and practical AI for developer productivity.
                 </p>
                 <div class="magnetic-wrap">
                     <a href="https://www.linkedin.com/in/pidubey007/recent-activity/all/" target="_blank" class="magnetic-btn">
                     <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    view_all_posts
+                    read_on_linkedin
                 </a></div>
             </div>
         </section>
