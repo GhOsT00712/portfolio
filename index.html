@@ -90,6 +90,53 @@
             }
         }
 
+        @keyframes avatarFloat {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, -10px); }
+        }
+
+        @keyframes avatarPulse {
+            0%, 100% { box-shadow: var(--card-shadow), 0 0 0 0 rgba(0, 243, 255, 0.12); }
+            50% { box-shadow: var(--card-shadow), 0 0 30px 6px rgba(0, 243, 255, 0.18); }
+        }
+
+        @keyframes codeDrift {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.72; }
+            50% { transform: translateY(-10px) rotate(4deg); opacity: 1; }
+        }
+
+        @keyframes typingBlink {
+            0%, 100% { opacity: 0.35; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes leftArmCheer {
+            0%, 100% { transform: rotate(22deg); }
+            35% { transform: rotate(-72deg) translateY(-10px); }
+            65% { transform: rotate(-96deg) translateY(-6px); }
+            82% { transform: rotate(-82deg) translateY(-8px); }
+        }
+
+        @keyframes rightArmCheer {
+            0%, 100% { transform: rotate(-30deg); }
+            35% { transform: rotate(72deg) translateY(-10px); }
+            65% { transform: rotate(96deg) translateY(-6px); }
+            82% { transform: rotate(82deg) translateY(-8px); }
+        }
+
+        @keyframes avatarCheerBounce {
+            0%, 100% { transform: translate(-50%, 0); }
+            30% { transform: translate(-50%, -14px); }
+            55% { transform: translate(-50%, -4px); }
+            76% { transform: translate(-50%, -10px); }
+        }
+
+        @keyframes laptopExcited {
+            0%, 100% { transform: translateX(-50%) rotate(0deg); }
+            35% { transform: translateX(-50%) rotate(-4deg); }
+            65% { transform: translateX(-50%) rotate(4deg); }
+        }
+
         .cursor-blink {
             animation: blink 1s step-end infinite;
         }
@@ -153,7 +200,8 @@ header {
         .header-btn .btn-icon {
             width: 16px;
             height: 16px;
-            display: none;
+            display: block;
+            flex-shrink: 0;
             fill: currentColor;
         }
 
@@ -181,10 +229,22 @@ header {
         .hero {
             padding: 140px 0;
             min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             position: relative;
+        }
+
+        .hero-shell {
+            min-height: inherit;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 420px);
+            align-items: center;
+            gap: 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 1;
         }
 
         .hero::before {
@@ -238,6 +298,314 @@ header {
             border-left: 3px solid var(--terminal-red-gradient);
             padding-left: 24px;
             line-height: 1.8;
+        }
+
+        .hero-avatar-panel {
+            justify-self: end;
+            width: min(100%, 420px);
+            padding: 0;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hero-avatar-panel:focus-visible {
+            outline: 2px solid rgba(0, 243, 255, 0.7);
+            outline-offset: 8px;
+            border-radius: 18px;
+        }
+
+        .avatar-stage {
+            min-height: 360px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .avatar-stage::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 28px 28px;
+            mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent);
+            opacity: 0.4;
+        }
+
+        .avatar-stage::after {
+            content: '';
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            bottom: 22px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+        }
+
+        .avatar-orbit,
+        .avatar-orbit::before,
+        .avatar-orbit::after {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 243, 255, 0.12);
+            content: '';
+        }
+
+        .avatar-orbit {
+            width: 280px;
+            height: 280px;
+            left: 50%;
+            top: 48%;
+            transform: translate(-50%, -50%);
+        }
+
+        .avatar-orbit::before {
+            inset: 22px;
+            border-color: rgba(255, 77, 77, 0.16);
+        }
+
+        .avatar-orbit::after {
+            inset: 46px;
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .code-chip {
+            position: absolute;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            letter-spacing: 0.8px;
+            backdrop-filter: blur(10px);
+            animation: codeDrift 4.8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .code-chip-one {
+            top: 56px;
+            right: 28px;
+        }
+
+        .code-chip-two {
+            top: 132px;
+            left: 22px;
+            animation-delay: 0.8s;
+        }
+
+        .code-chip-three {
+            right: 40px;
+            bottom: 116px;
+            animation-delay: 1.6s;
+        }
+
+        .developer-avatar {
+            position: absolute;
+            left: 50%;
+            bottom: 42px;
+            width: 230px;
+            height: 250px;
+            transform: translateX(-50%);
+            animation: avatarFloat 5s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .avatar-head {
+            position: absolute;
+            top: 26px;
+            left: 50%;
+            width: 84px;
+            height: 92px;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #ffcf9f 0%, #f4aa78 100%);
+            border-radius: 40px 40px 36px 36px;
+            box-shadow: inset 0 -8px 0 rgba(0,0,0,0.08);
+        }
+
+        .avatar-head::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 4px;
+            width: 76px;
+            height: 42px;
+            background: linear-gradient(180deg, #e8e8e8 0%, #a7b3c2 100%);
+            border-radius: 34px 34px 18px 18px;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.12);
+        }
+
+        .avatar-head::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 16px;
+            width: 26px;
+            height: 4px;
+            transform: translateX(-50%);
+            background: rgba(88, 47, 31, 0.6);
+            border-radius: 999px;
+        }
+
+        .avatar-eyes {
+            position: absolute;
+            top: 48px;
+            left: 50%;
+            width: 40px;
+            height: 10px;
+            transform: translateX(-50%);
+        }
+
+        .avatar-eyes::before,
+        .avatar-eyes::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 8px;
+            height: 8px;
+            background: #1f2630;
+            border-radius: 50%;
+        }
+
+        .avatar-eyes::before {
+            left: 0;
+        }
+
+        .avatar-eyes::after {
+            right: 0;
+        }
+
+        .avatar-neck {
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            width: 24px;
+            height: 22px;
+            transform: translateX(-50%);
+            background: #ecab81;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .avatar-body {
+            position: absolute;
+            bottom: 42px;
+            left: 50%;
+            width: 150px;
+            height: 116px;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #1f2735 0%, #121923 100%);
+            border-radius: 34px 34px 18px 18px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .avatar-body::before,
+        .avatar-body::after {
+            content: '';
+            position: absolute;
+            top: 24px;
+            width: 36px;
+            height: 92px;
+            background: linear-gradient(180deg, #273246 0%, #141c28 100%);
+            border-radius: 18px;
+        }
+
+        .avatar-body::before {
+            left: -18px;
+            transform: rotate(22deg);
+            transform-origin: top right;
+        }
+
+        .avatar-body::after {
+            right: -18px;
+            transform: rotate(-30deg);
+            transform-origin: top left;
+        }
+
+        .hero-avatar-panel.is-cheering .avatar-body::before {
+            animation: leftArmCheer 900ms ease-in-out;
+        }
+
+        .hero-avatar-panel.is-cheering .avatar-body::after {
+            animation: rightArmCheer 900ms ease-in-out;
+        }
+
+        .hero-avatar-panel.is-cheering .developer-avatar {
+            animation: avatarCheerBounce 900ms ease-in-out;
+        }
+
+        .avatar-laptop {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 190px;
+            height: 94px;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #101720 0%, #0a0f17 100%);
+            border-radius: 16px 16px 12px 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+            overflow: hidden;
+        }
+
+        .hero-avatar-panel.is-cheering .avatar-laptop {
+            animation: laptopExcited 900ms ease-in-out;
+        }
+
+        .avatar-laptop::before {
+            content: '';
+            position: absolute;
+            inset: 12px 14px 26px;
+            border-radius: 10px;
+            background:
+                linear-gradient(180deg, rgba(0, 243, 255, 0.14), rgba(0, 243, 255, 0.03)),
+                #071018;
+            border: 1px solid rgba(0, 243, 255, 0.14);
+        }
+
+        .avatar-laptop::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            width: 72px;
+            height: 4px;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.18);
+        }
+
+        .laptop-code {
+            position: absolute;
+            inset: 28px 0 auto;
+            text-align: center;
+            color: var(--accent-cyan);
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            animation: typingBlink 1.2s steps(2, end) infinite;
+        }
+
+        .laptop-base {
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 222px;
+            height: 12px;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+            border-radius: 999px;
+        }
+
+        .avatar-shadow {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            width: 220px;
+            height: 24px;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(0,0,0,0.35), transparent 70%);
+            filter: blur(8px);
         }
 
         /* --- ENHANCED MAGNETIC BUTTONS --- */
@@ -554,6 +922,17 @@ header {
                 overflow: hidden;
             }
 
+            .hero-shell {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .hero-avatar-panel {
+                justify-self: stretch;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
             .grid-2 {
                 grid-template-columns: 1fr;
             }
@@ -572,6 +951,10 @@ header {
             }
             .hero {
                 padding: 80px 0;
+            }
+
+            .avatar-stage {
+                min-height: 320px;
             }
         }
 
@@ -624,6 +1007,64 @@ header {
                 width: 18px;
                 height: 18px;
             }
+
+            .hero-shell {
+                gap: 24px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.08rem;
+                padding-left: 18px;
+                margin-bottom: 36px;
+            }
+
+            .hero-avatar-panel {
+                padding: 0;
+            }
+
+            .avatar-stage {
+                min-height: 280px;
+            }
+
+            .avatar-orbit {
+                width: 220px;
+                height: 220px;
+            }
+
+            .developer-avatar {
+                width: 190px;
+                height: 216px;
+            }
+
+            .avatar-head {
+                width: 72px;
+                height: 82px;
+            }
+
+            .avatar-head::before {
+                width: 64px;
+                height: 36px;
+            }
+
+            .avatar-body {
+                width: 126px;
+                height: 100px;
+            }
+
+            .avatar-laptop {
+                width: 162px;
+                height: 82px;
+            }
+
+            .laptop-base,
+            .avatar-shadow {
+                width: 188px;
+            }
+
+            .code-chip {
+                font-size: 0.72rem;
+                padding: 7px 10px;
+            }
         }
 
         /* Scrollbar Styling */
@@ -655,10 +1096,10 @@ header {
             <nav>
                 <div class="magnetic-wrap">
                     <a href="mailto:get.piyush007@gmail.com" class="header-btn magnetic-btn">
-                        <span class="btn-label">[ SEND EMAIL ]</span>
                         <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.2l8 5.6 8-5.6V6H4zm16 12V8.7l-7.4 5.2a1 1 0 0 1-1.2 0L4 8.7V18h16z"/>
                         </svg>
+                        <span class="btn-label">Email Me</span>
                     </a>
                 </div>
             </nav>
@@ -668,51 +1109,76 @@ header {
     <div class="container">
         <!-- Hero -->
         <section class="hero">
-            <p class="hero-intro">> whoami</p>
-            <h1>Piyush Dubey</h1>
-            
-            <p class="hero-subtitle">
-                I build distributed backend systems, scalable platforms, and practical AI-powered tools with a focus on reliability, performance, and developer productivity.
-            </p>
-            
-            <div class="nav-actions">
-                <!-- Magnetic Link: About Me -->
-                <div class="magnetic-wrap">
-                    <a href="#about" class="magnetic-btn">
-                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                        ./about
-                    </a>
+            <div class="hero-shell">
+                <div class="hero-copy">
+                    <p class="hero-intro">> whoami</p>
+                    <h1>Piyush Dubey</h1>
+                    
+                    <p class="hero-subtitle">
+                        I build distributed backend systems, scalable platforms, and practical AI-powered tools with a focus on reliability, performance, and developer productivity.
+                    </p>
+                    
+                    <div class="nav-actions">
+                        <!-- Magnetic Link: About Me -->
+                        <div class="magnetic-wrap">
+                            <a href="#about" class="magnetic-btn">
+                                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                ./about
+                            </a>
+                        </div>
+
+                        <div class="magnetic-wrap">
+                            <a href="#experience" class="magnetic-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V8a2 2 0 0 0-2-2zm-10-2h4v2h-4V4zm10 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4h16v4zm0-6H4V8h16v3z"/></svg>
+                                ./selected_impact
+                            </a>
+                        </div>
+
+                        <!-- Magnetic Link: Blog -->
+                        <div class="magnetic-wrap">
+                            <a href="#blog" class="magnetic-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                ./notes
+                            </a>
+                        </div>
+
+                        <!-- Magnetic Link: LinkedIn -->
+                        <div class="magnetic-wrap">
+                            <a href="https://www.linkedin.com/in/pidubey007" target="_blank" class="magnetic-btn">
+                                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                connect_linkedin
+                            </a>
+                        </div>
+
+                        <!-- Magnetic Link: Github -->
+                        <div class="magnetic-wrap">
+                            <a href="https://github.com/GhOsT00712" target="_blank" class="magnetic-btn">
+                                <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                git_clone_repo
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="magnetic-wrap">
-                    <a href="#experience" class="magnetic-btn">
-                        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V8a2 2 0 0 0-2-2zm-10-2h4v2h-4V4zm10 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4h16v4zm0-6H4V8h16v3z"/></svg>
-                        ./selected_impact
-                    </a>
-                </div>
-
-                <!-- Magnetic Link: Blog -->
-                <div class="magnetic-wrap">
-                    <a href="#blog" class="magnetic-btn">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                        ./notes
-                    </a>
-                </div>
-
-                <!-- Magnetic Link: LinkedIn -->
-                <div class="magnetic-wrap">
-                    <a href="https://www.linkedin.com/in/pidubey007" target="_blank" class="magnetic-btn">
-                        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        connect_linkedin
-                    </a>
-                </div>
-
-                <!-- Magnetic Link: Github -->
-                <div class="magnetic-wrap">
-                    <a href="https://github.com/GhOsT00712" target="_blank" class="magnetic-btn">
-                        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        git_clone_repo
-                    </a>
+                <div class="hero-avatar-panel" role="button" tabindex="0" aria-label="Animate avatar by raising hands">
+                    <div class="avatar-stage">
+                        <div class="avatar-orbit"></div>
+                        <div class="code-chip code-chip-one">&lt;/&gt;</div>
+                        <div class="code-chip code-chip-two">AI</div>
+                        <div class="code-chip code-chip-three">API</div>
+                        <div class="developer-avatar">
+                            <div class="avatar-head">
+                                <div class="avatar-eyes"></div>
+                            </div>
+                            <div class="avatar-neck"></div>
+                            <div class="avatar-body"></div>
+                            <div class="avatar-laptop">
+                                <span class="laptop-code">0101_</span>
+                            </div>
+                            <div class="laptop-base"></div>
+                        </div>
+                        <div class="avatar-shadow"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -851,6 +1317,8 @@ header {
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const magnets = document.querySelectorAll('.magnetic-wrap');
+            const avatarPanel = document.querySelector('.hero-avatar-panel');
+            const laptopCode = document.querySelector('.laptop-code');
 
             magnets.forEach((magnet) => {
                 const button = magnet.querySelector('.magnetic-btn');
@@ -872,6 +1340,34 @@ header {
                     button.style.transform = 'translate(0px, 0px)';
                 });
             });
+
+            if (avatarPanel) {
+                const defaultLaptopText = laptopCode ? laptopCode.textContent : '';
+                let cheerResetTimeout;
+
+                const playAvatarCheer = () => {
+                    avatarPanel.classList.remove('is-cheering');
+                    // Force a reflow so the animation can replay on repeated clicks.
+                    void avatarPanel.offsetWidth;
+                    avatarPanel.classList.add('is-cheering');
+
+                    if (laptopCode) {
+                        laptopCode.textContent = '#compiling..';
+                        window.clearTimeout(cheerResetTimeout);
+                        cheerResetTimeout = window.setTimeout(() => {
+                            laptopCode.textContent = defaultLaptopText;
+                        }, 950);
+                    }
+                };
+
+                avatarPanel.addEventListener('click', playAvatarCheer);
+                avatarPanel.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        playAvatarCheer();
+                    }
+                });
+            }
         });
     </script>
 </body>
