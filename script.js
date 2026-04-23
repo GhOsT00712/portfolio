@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const magnets = document.querySelectorAll('.magnetic-wrap');
     const avatarPanel = document.querySelector('.hero-avatar-panel');
     const laptopCode = document.querySelector('.laptop-code');
+    const trackedLinks = document.querySelectorAll('[data-track-event]');
     const defaultLaptopText = laptopCode ? laptopCode.textContent : '';
     const bootLaptopText = '#compiling';
     const bootTargets = Array.from(document.querySelectorAll('[data-boot-type]'));
     const postBootTargets = Array.from(document.querySelectorAll('[data-post-boot-type]'));
     const terminalSections = Array.from(document.querySelectorAll('.terminal-section'));
+    const TRACK_ENDPOINT = '/api/track-click';
     const typeDelay = (duration) => new Promise((resolve) => window.setTimeout(resolve, duration));
 
     const prepareTypeTarget = (element) => {
@@ -91,6 +93,33 @@ document.addEventListener('DOMContentLoaded', () => {
         terminalSections.forEach((section) => observer.observe(section));
     };
 
+    const sendClickMetric = (link) => {
+        const event = link.dataset.trackEvent;
+        if (!event) return;
+
+        const payload = JSON.stringify({
+            event,
+            href: link.href,
+            label: link.dataset.trackLabel || '',
+            location: window.location.pathname,
+        });
+
+        if (navigator.sendBeacon) {
+            navigator.sendBeacon(
+                TRACK_ENDPOINT,
+                new Blob([payload], { type: 'application/json' })
+            );
+            return;
+        }
+
+        fetch(TRACK_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload,
+            keepalive: true,
+        }).catch(() => {});
+    };
+
     const runBootSequence = async () => {
         bootTargets.forEach((target) => {
             prepareTypeTarget(target);
@@ -148,6 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         magnet.addEventListener('mouseleave', () => {
             button.style.transform = 'translate(0px, 0px)';
+        });
+    });
+
+    trackedLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            sendClickMetric(link);
         });
     });
 

@@ -1,0 +1,11 @@
+{
+  "name": "piyush-portfolio",
+  "compatibility_date": "2026-04-23",
+  "pages_build_output_dir": ".",
+  "analytics_engine_datasets": [
+    {
+      "binding": "ANALYTICS",
+      "dataset": "portfolio_clicks"
+    }
+  ]
+}
