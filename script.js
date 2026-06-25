@@ -1,7 +1,7 @@
 /* ============================================================
    DATA
 ============================================================ */
-const COMMANDS = ['about','experience','skills','projects','connect','contact','help','ls','clear','whoami','cat','resume','neofetch','history','theme','sudo','vim','emacs','exit','date','echo','man'];
+const COMMANDS = ['about','experience','skills','projects','connect','contact','help','ls','clear','whoami','cat','neofetch','history','theme','sudo','vim','emacs','exit','date','echo','man'];
 
 const FILES = {
   'about.md':       () => renderAbout(),
@@ -50,15 +50,33 @@ function renderAbout(){
 <div class="text-[#6e7681]">$ cat about.md</div>
 <div class="mt-2 text-[#c9d1d9]">
   <div class="mb-2"><span class="text-[#6e7681]">name:</span> <span class="text-[#f0f6fc]">Piyush Dubey</span></div>
-  <div class="mb-2"><span class="text-[#6e7681]">role:</span> <span class="text-[#3fb950]">Principal Member of Technical Staff</span></div>
-  <div class="mb-2"><span class="text-[#6e7681]">focus:</span> <span class="text-[#39c5cf]">Platform · Backend · Distributed Systems · AI Infrastructure</span></div>
+  <div class="mb-2"><span class="text-[#6e7681]">role:</span> <span class="text-[#3fb950]">Principal Member of Technical Staff @ Oracle Cloud</span></div>
+  <div class="mb-2"><span class="text-[#6e7681]">focus:</span> <span class="text-[#39c5cf]">Platform Engineering · Distributed Systems · Cloud Platforms · AI Agent Infrastructure · Developer Experience</span></div>
   <div class="mb-2"><span class="text-[#6e7681]">location:</span> Bangalore, India <span class="text-[#6e7681]">·</span> <span class="text-[#3fb950]">open to relocation & visa sponsorship</span></div>
   <div class="mb-2"><span class="text-[#6e7681]">experience:</span> 13+ years</div>
 </div>
 <div class="mt-4 border-t border-[#1f2428] pt-3 max-w-2xl text-[#c9d1d9] leading-relaxed">
-  <p class="mb-2">Staff-level backend engineer with <span class="text-[#00ff9c]">13+ years</span> building large-scale platforms, services and AI agent systems at <span class="text-[#58a6ff]">Oracle</span>, <span class="text-[#58a6ff]">Microsoft</span>, and <span class="text-[#58a6ff]">Adobe</span>. Most of my work lives at the intersection of <span class="text-[#39c5cf]">distributed systems</span>, <span class="text-[#d29922]">developer experience</span>, and <span class="text-[#bc8cff]">AI infrastructure</span>.</p>
-  <p class="mb-2">Currently a Principal Member of Technical Staff at <span class="text-[#58a6ff]">Oracle</span>, leading architecture of an AI Agent platform and distributed event-streaming infrastructure powering critical cloud workloads across OCI.</p>
-  <p>I provide technical direction and lead architecture on complex, large-scale projects — designing platforms that other engineers build on.</p>
+  <p class="mb-2">I am a staff-level backend and platform engineer who builds systems other engineers depend on: cloud control-plane services, event platforms, distributed rate limiting, observability pipelines, retrieval systems, and AI agent runtimes.</p>
+  <p class="mb-2">Across <span class="text-[#58a6ff]">Oracle Cloud</span>, <span class="text-[#58a6ff]">Microsoft 365</span>, and <span class="text-[#58a6ff]">Adobe</span>, I have worked on platform foundations behind OCI developer workflows, Copilot retrieval experiences, and high-throughput globalization systems.</p>
+  <p>I am strongest in environments where reliability, scale, and product velocity all matter at once - the kind of platform work where a good design makes dozens of teams faster.</p>
+</div>
+<div class="mt-4 grid sm:grid-cols-2 gap-2 max-w-3xl text-[12px]">
+  <div class="border border-[#1f2428] p-3">
+    <div class="text-[#d29922] mb-1">what I build</div>
+    <div class="text-[#c9d1d9]">Backend platforms, distributed workflows, AI infrastructure, cloud automation, and service reliability systems.</div>
+  </div>
+  <div class="border border-[#1f2428] p-3">
+    <div class="text-[#39c5cf] mb-1">how I lead</div>
+    <div class="text-[#c9d1d9]">Architecture reviews, operational readiness, incident learning, design coaching, and pragmatic delivery.</div>
+  </div>
+  <div class="border border-[#1f2428] p-3">
+    <div class="text-[#bc8cff] mb-1">recent problems</div>
+    <div class="text-[#c9d1d9]">Durable agent execution, Terraform provider registry flows, event delivery, quota enforcement, and production diagnosis.</div>
+  </div>
+  <div class="border border-[#1f2428] p-3">
+    <div class="text-[#3fb950] mb-1">best fit</div>
+    <div class="text-[#c9d1d9]">Staff/principal backend roles across platform engineering, cloud infrastructure, developer experience, or AI systems.</div>
+  </div>
 </div>
 <div class="mt-4 text-[11px] text-[#6e7681]">
   <span class="text-[#d29922]">→</span> try <span class="text-[#00ff9c] cursor-pointer" onclick="run('experience')">experience</span>, <span class="text-[#00ff9c] cursor-pointer" onclick="run('skills')">skills</span>, or <span class="text-[#00ff9c] cursor-pointer" onclick="run('projects')">projects</span>
@@ -70,35 +88,36 @@ function renderExperience(){
   const jobs = [
     {period:'JAN 2025 — PRESENT', role:'Principal Member of Technical Staff', company:'Oracle · Developer Experience Platform', color:'#3fb950',
      points:[
-       'Lead architecture of production-ready <span class="text-[#00ff9c]">AI Agent platform</span> adopted by 6+ engineering teams, reducing on-call load & debugging time by 60% across the OCI developer experience org.',
-       'Design & scale a highly available <span class="text-[#39c5cf]">distributed event-streaming platform</span> at 5K events/sec, adopted by 20+ teams powering cloud-critical workloads.',
-       'Lead design of Redis-backed <span class="text-[#d29922]">distributed rate limiter</span> for users and AI agents, scaling quota enforcement to 10K QPS with shared state and throttling policies.',
-       'Built MCP server, skills and CLI-based AI agent tooling adopted across multiple teams for agentic AI development workflows.',
-       'Maintain API design, reliability, performance and availability for 6+ services orchestrating cloud workloads & infrastructure provisioning.',
-       'Led architecture review forums and mentorship for 40+ engineers, standardizing design patterns across backend, AI and platform services.',
+       'Provide technical leadership across <span class="text-[#00ff9c]">3 Developer Experience teams</span> building OCI workload orchestration, infrastructure provisioning, and developer productivity platforms.',
+       'Led architecture for Terraform provider distribution through a <span class="text-[#39c5cf]">Terraform Provider Registry</span>, moving OCI provider teams toward self-service regional releases.',
+       'Designed a highly available <span class="text-[#39c5cf]">event-streaming platform</span> processing 5K+ events/sec with durable delivery, fault-tolerant recovery, and adoption across 20+ cloud engineering teams.',
+       'Built observability and error-classification pipelines that surface service-impacting failures and sharpen reliability reviews for critical cloud APIs.',
+       'Designed a Redis-backed <span class="text-[#d29922]">distributed rate limiter</span> handling 10K+ QPS for quota enforcement, tenant isolation, throttling, and shared-state coordination.',
+       'Architected an <span class="text-[#bc8cff]">AI agent execution platform</span> with durable task orchestration, MCP tool integrations, and Codex SDK incident automation that reduced debugging effort by 60%.',
+       'Drive architecture reviews, operational readiness, incident investigations, and mentoring programs for 40+ engineers.',
      ]},
     {period:'MAY 2022 — DEC 2024', role:'Senior Software Engineer', company:'Microsoft · Outlook Groups Platform', color:'#d29922',
      points:[
-       'Designed architecture for the <span class="text-[#bc8cff]">Outlook Groups AI Platform</span> powering Copilot search & Q&A using RAG for 220M+ monthly active users.',
-       'Improved API retrieval and collaboration latency by <span class="text-[#00ff9c]">70% globally</span> through backend and data-path optimization.',
-       'Built group lifecycle capabilities that reduced subscription costs by ~10% for Tier-1 enterprise customers while preserving reliability.',
-       'Led cross-team architecture across Outlook, Teams and SharePoint to unify Microsoft 365 group service delivery.',
-       'Mentored 10+ engineers and drove high-level design reviews for backend services, AI platform and distributed system changes.',
+       'Architected the <span class="text-[#bc8cff]">Outlook Groups retrieval platform</span> powering Copilot search and Q&A experiences across Microsoft 365 collaboration workloads.',
+       'Served platform traffic for products used by <span class="text-[#00ff9c]">220M+ monthly active users</span>, with backend paths optimized for global collaboration scenarios.',
+       'Reduced retrieval and collaboration latency by 70% through query-path redesign, distributed caching, and backend performance work.',
+       'Built lifecycle management capabilities that lowered enterprise infrastructure and subscription costs by ~10% while preserving reliability.',
+       'Led architecture across Outlook, Teams, and SharePoint, and mentored 10+ engineers through design reviews and production readiness work.',
      ]},
     {period:'OCT 2016 — APR 2022', role:'Computer Scientist', company:'Adobe · Globalization Platform', color:'#39c5cf',
      points:[
-       'Built real-time high-throughput <span class="text-[#00ff9c]">translation microservice</span> supporting 31 locales at 50K QPS, accelerating international product launches.',
-       'Designed Kafka-based event pipelines with retries, batching and Dead Letter Queue handling for reliable asynchronous processing.',
-       'Built a globalization platform, reducing localization effort and improving time-to-market.',
-       'Built LINE messaging integrations achieving 60% adoption in the Japan market.',
+       'Built and scaled a real-time <span class="text-[#00ff9c]">translation platform</span> supporting 31 locales and sustaining 50K+ QPS across Adobe products.',
+       'Designed Kafka-based event pipelines with retries, batching, backpressure handling, and dead-letter processing for reliable async workflows.',
+       'Improved localization throughput by decomposing services and turning repeated globalization work into reusable platform capabilities.',
+       'Built LINE messaging integrations that reached 60% adoption across targeted Japan customer segments.',
      ]},
     {period:'MAR 2013 — SEP 2016', role:'Software Engineer', company:'TCS · Healthcare Data', color:'#bc8cff',
      points:[
-       'Developed healthcare data pipelines improving reliability for patient-doctor alignment systems.',
+       'Developed healthcare data processing pipelines for patient-doctor alignment systems, improving reliability and scalability of core data flows.',
      ]},
   ];
   let html = `<div class="fade-in"><div class="text-[#6e7681]">$ cat experience.log</div>
-    <div class="mt-3 mb-2 text-[#f0f6fc] text-base">Work History <span class="text-[#6e7681]">— 13 years building things that scale</span></div>`;
+    <div class="mt-3 mb-2 text-[#f0f6fc] text-base">Engineering Experience <span class="text-[#6e7681]">— platform systems, reliability, AI infrastructure</span></div>`;
   jobs.forEach((j,i)=>{
     html += `
     <div class="mt-4 border-l-2 pl-4" style="border-color:${j.color}">
@@ -113,7 +132,7 @@ function renderExperience(){
       </ul>
     </div>`;
   });
-  html += `<div class="mt-5 text-[11px] text-[#6e7681]"><span class="text-[#d29922]">→</span> full details available on <span class="lk cursor-pointer" onclick="run('connect')">LinkedIn</span> or via <span class="text-[#00ff9c] cursor-pointer" onclick="run('resume')">resume</span></div></div>`;
+  html += `<div class="mt-5 text-[11px] text-[#6e7681]"><span class="text-[#d29922]">→</span> full details available on <span class="lk cursor-pointer" onclick="run('connect')">LinkedIn</span></div></div>`;
   return html;
 }
 
@@ -121,10 +140,10 @@ function renderSkills(){
   const groups = [
     {label:'LANGUAGES',       color:'#58a6ff', items:['Java','Go','Python','TypeScript']},
     {label:'BACKEND',         color:'#3fb950', items:['Spring Boot','Micronaut','Dropwizard','FastAPI','Express']},
-    {label:'ARCHITECTURE',    color:'#d29922', items:['Distributed Systems','Microservices','Event-Driven','Multi-Region','HA','API Design','Workflow Orchestration']},
-    {label:'CLOUD & INFRA',   color:'#39c5cf', items:['OCI','Azure','AWS','Kubernetes','Docker','Serverless','Terraform']},
-    {label:'DATA PLATFORMS',  color:'#bc8cff', items:['Kafka','Redis','PostgreSQL','Oracle DB','Cassandra','MongoDB']},
-    {label:'AI & LLM',        color:'#ff7b72', items:['LangChain','OpenAI SDK','MCP','AI Agents','RAG','Semantic Search','Vector Embeddings']},
+    {label:'ARCHITECTURE',    color:'#d29922', items:['Distributed Systems','Service-Oriented Architecture','Event-Driven Architecture','Workflow Orchestration','High Availability','Fault Tolerance','API Design','Capacity Planning']},
+    {label:'CLOUD & INFRA',   color:'#39c5cf', items:['OCI','Azure','AWS','Kubernetes','Docker','Terraform','Infrastructure Automation','Observability','Cloud Control Planes']},
+    {label:'DATA PLATFORMS',  color:'#bc8cff', items:['Kafka','Redis','PostgreSQL','Oracle DB','Cassandra','MongoDB','Qdrant']},
+    {label:'AI & LLM',        color:'#ff7b72', items:['AI Agents','Agent Runtime Systems','MCP','RAG','Semantic Search','Vector Embeddings','OpenAI SDK','Codex SDK','Tool Calling']},
   ];
   let html = `<div class="fade-in"><div class="text-[#6e7681]">$ cat skills.json | jq</div>
     <div class="mt-3 mb-3 text-[#f0f6fc]">Technical Stack</div>
@@ -138,28 +157,30 @@ function renderSkills(){
       </div>
     </div>`;
   });
-  html += `</div><div class="mt-4 text-[11px] text-[#6e7681]"><span class="text-[#d29922]">→</span> always learning — currently exploring <span class="text-[#00ff9c]">agentic AI workflows</span> and <span class="text-[#00ff9c]">MCP</span></div></div>`;
+  html += `</div><div class="mt-4 text-[11px] text-[#6e7681]"><span class="text-[#d29922]">→</span> strongest lanes: <span class="text-[#00ff9c]">backend platforms</span>, <span class="text-[#00ff9c]">reliability</span>, <span class="text-[#00ff9c]">cloud infrastructure</span>, and <span class="text-[#00ff9c]">agentic AI systems</span></div></div>`;
   return html;
 }
 
 function renderProjects(){
   const projects = [
-    {name:'ai-buddy', tag:'AI · Microsoft', desc:'Personalized AI assistant built on Azure OpenAI (GPT-4) and distributed computing.', color:'#00ff9c', url:'github.com/GhOsT00712/ai-buddy'},
-    {name:'hackerbox', tag:'Platform · Microsoft', desc:'Enterprise hackathon platform automating provisioning of Teams channels, SharePoint sites and OneDrive resources.', color:'#bc8cff', url:'github.com/GhOsT00712/hackerbox'},
-    {name:'clashmate', tag:'Analytics · Real-time', desc:'Companion application for real-time game statistics and analytics.', color:'#39c5cf', url:'github.com/GhOsT00712/clashmate'},
+    {name:'oci-agent-runtime', tag:'AI Infrastructure · Oracle', desc:'Durable AI agent execution platform with task orchestration, MCP tool integrations, and Codex SDK incident automation for OCI developer workflows.', color:'#bc8cff', impact:'60% less debugging effort on common production investigations'},
+    {name:'event-streaming-platform', tag:'Distributed Systems · Oracle', desc:'Highly available event-streaming layer with durable delivery, recovery mechanics, and adoption across cloud engineering teams handling critical workloads.', color:'#39c5cf', impact:'5K+ events/sec · 20+ teams'},
+    {name:'terraform-provider-registry', tag:'Cloud Platform · Oracle', desc:'Provider distribution architecture that decouples OCI provider teams from centralized releases and moves regional publishing toward self-service delivery.', color:'#d29922', impact:'Faster provider release flow across OCI regions'},
+    {name:'m365-copilot-retrieval', tag:'RAG · Microsoft', desc:'Outlook Groups retrieval platform powering Copilot search and question-answering experiences across Microsoft 365 collaboration workloads.', color:'#58a6ff', impact:'220M+ monthly active users · 70% latency reduction'},
+    {name:'globalization-platform', tag:'High Throughput · Adobe', desc:'Real-time translation and localization platform backed by Kafka pipelines, async workflow patterns, and reusable globalization services.', color:'#00ff9c', impact:'50K+ QPS · 31 locales'},
   ];
   let html = `<div class="fade-in"><div class="text-[#6e7681]">$ ls projects/</div>
-    <div class="mt-3 mb-3 text-[#f0f6fc]">Selected Projects & Hackathons</div>
+    <div class="mt-3 mb-3 text-[#f0f6fc]">Selected Platform Work</div>
     <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">`;
   projects.forEach(p=>{
     html += `
-    <div class="border border-[#1f2428] hover:border-[${p.color}] transition p-3 group cursor-pointer" onclick="return openExternal('https://${p.url}', 'project: ${p.name}')">
+    <div class="border border-[#1f2428] transition p-3 group" style="--project-color:${p.color}" onmouseenter="this.style.borderColor=this.style.getPropertyValue('--project-color')" onmouseleave="this.style.borderColor='#1f2428'">
       <div class="flex items-baseline justify-between">
-        <div class="text-[#f0f6fc] font-semibold group-hover:text-[${p.color}] transition">~/projects/${p.name}</div>
+        <div class="text-[#f0f6fc] font-semibold transition" style="color:${p.color}">~/projects/${p.name}</div>
         <div class="text-[10px] text-[#6e7681]">${p.tag}</div>
       </div>
       <p class="mt-2 text-[12px] text-[#c9d1d9] leading-relaxed">${p.desc}</p>
-      <div class="mt-2 text-[11px]" style="color:${p.color}">↗ ${p.url}</div>
+      <div class="mt-2 text-[11px]" style="color:${p.color}">impact: ${p.impact}</div>
     </div>`;
   });
   html += `</div></div>`;
@@ -170,12 +191,11 @@ function renderConnect(){
   return `
 <div class="fade-in">
 <div class="text-[#6e7681]">$ cat contact.vcf</div>
-<div class="mt-3 mb-3 text-[#f0f6fc]">Let's build something.</div>
+<div class="mt-3 mb-3 text-[#f0f6fc]">Open to staff-level backend, platform, and AI infrastructure conversations.</div>
 <div class="max-w-2xl space-y-2 text-[13px]">
   <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-[#1f2428] pb-2">
-    <div class="text-[#ff7b72] w-28 shrink-0">PHONE</div>
-    <span class="lk">+91 <span class="inline-block blur-sm select-none opacity-100">••••• •••••</span></span>
-    <button class="text-[10px] text-[#6e7681] hover:text-[#00ff9c] sm:ml-auto" onclick="copy('+91')">[copy]</button>
+    <div class="text-[#ff7b72] w-28 shrink-0">LOCATION</div>
+    <span>Bangalore, India</span>
   </div>
   <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-[#1f2428] pb-2">
     <div class="text-[#3fb950] w-28 shrink-0">GMAIL</div>
@@ -184,7 +204,7 @@ function renderConnect(){
   </div>
   <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-[#1f2428] pb-2">
     <div class="text-[#39c5cf] w-28 shrink-0">GITHUB</div>
-    <a href="#" onclick="toast('opening github');return false" class="lk">github.com/GhOsT00712</a>
+    <a href="https://github.com/GhOsT00712" target="_blank" rel="noopener noreferrer" onclick="return openExternal(this.href, 'github')" class="lk">github.com/GhOsT00712</a>
     <button class="text-[10px] text-[#6e7681] hover:text-[#00ff9c] sm:ml-auto" onclick="copy('github.com/GhOsT00712')">[copy]</button>
   </div>
   <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-[#1f2428] pb-2">
@@ -197,14 +217,17 @@ function renderConnect(){
     <a href="https://piyush-dubey.is-a.dev" target="_blank" rel="noopener noreferrer" onclick="return openExternal(this.href, 'website')" class="lk">piyush-dubey.is-a.dev</a>
     <button class="text-[10px] text-[#6e7681] hover:text-[#00ff9c] sm:ml-auto" onclick="copy('piyush-dubey.is-a.dev')">[copy]</button>
   </div>
+  <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 pb-2">
+    <div class="text-[#bc8cff] w-28 shrink-0">MOBILITY</div>
+    <span>Open to relocation and visa sponsorship</span>
+  </div>
 </div>
 <div class="mt-5 border border-[#1f2428] p-3 max-w-2xl">
   <div class="text-[#6e7681] text-[11px] mb-1">// quick connect</div>
   <div class="text-[#c9d1d9]"><span class="text-[#3fb950]">$</span> ssh hello@piyush-dubey.is-a.dev</div>
-  <div class="text-[#6e7681] text-[11px] mt-2">Open to: <span class="text-[#3fb950]">full-time roles</span> · <span class="text-[#39c5cf]">relocation</span> · <span class="text-[#bc8cff]">visa sponsorship</span></div>
+  <div class="text-[#6e7681] text-[11px] mt-2">Best fit: <span class="text-[#3fb950]">staff/principal backend</span> · <span class="text-[#39c5cf]">platform engineering</span> · <span class="text-[#bc8cff]">AI infrastructure</span></div>
   <div class="text-[#6e7681] text-[11px] mt-1">Timezone: <span class="text-[#d29922]">IST (UTC+5:30)</span> · Response: usually within 24h</div>
 </div>
-<div class="mt-4 text-[11px] text-[#6e7681]"><span class="text-[#d29922]">→</span> run <span class="text-[#00ff9c] cursor-pointer" onclick="run('resume')">resume</span> to grab a copy</div>
 </div>`;
 }
 
@@ -212,13 +235,13 @@ function renderReadme(){
   return `<div class="fade-in text-[#c9d1d9]">
 <div class="text-[#6e7681]">$ cat README.md</div>
 <div class="mt-3 text-[#00ff9c] glow text-base"># portfolio.sh</div>
-<p class="mt-2">An interactive terminal-style portfolio for <span class="text-[#58a6ff]">Piyush Dubey</span>, Principal Member of Technical Staff.</p>
+<p class="mt-2">Interactive terminal-style portfolio for <span class="text-[#58a6ff]">Piyush Dubey</span>, a staff-level backend and platform engineer working across distributed systems, cloud infrastructure, developer experience, and AI agent platforms.</p>
 <div class="mt-3 text-[#d29922]">## Usage</div>
 <pre class="mt-1 text-[12px]">  Type a command and press Enter.
   Try: <span class="text-[#00ff9c]">help</span> · <span class="text-[#00ff9c]">about</span> · <span class="text-[#00ff9c]">experience</span> · <span class="text-[#00ff9c]">connect</span>
   Use ↑/↓ for history · Tab for autocomplete.</pre>
 <div class="mt-3 text-[#d29922]">## Notes</div>
-<p class="mt-1">Built with vanilla JS, Tailwind, and a healthy disregard for traditional portfolio layouts. No frameworks, no build step — just a single HTML file.</p>
+<p class="mt-1">Built with vanilla JS and Tailwind. The content is intentionally concise: enough signal for engineering review without turning the page into a resume dump.</p>
 <div class="mt-3 text-[#6e7681]">— last updated: 2026</div>
 </div>`;
 }
@@ -228,9 +251,8 @@ function renderHelp(){
     ['about',      'who am I, what I do'],
     ['experience', 'work history & achievements'],
     ['skills',     'tech stack & tools'],
-    ['projects',   'open source work'],
+    ['projects',   'selected platform work'],
     ['connect',    'email, social, contact info'],
-    ['resume',     'download résumé (pdf)'],
     ['ls',         'list files in ~/portfolio'],
     ['cat <file>', 'print file contents'],
     ['whoami',     'quick identity check'],
@@ -260,7 +282,6 @@ function renderLs(){
     <span class="text-[#3fb950]">-rw-r--r--</span> <span class="text-[#c9d1d9] cursor-pointer hover:text-[#00ff9c]" onclick="run('skills')">skills.json</span>
     <span class="text-[#3fb950]">-rw-r--r--</span> <span class="text-[#c9d1d9] cursor-pointer hover:text-[#00ff9c]" onclick="run('connect')">contact.vcf</span>
     <span class="text-[#3fb950]">-rw-r--r--</span> <span class="text-[#c9d1d9] cursor-pointer hover:text-[#00ff9c]" onclick="run('cat README.md')">README.md</span>
-    <span class="text-[#d29922]">-rw-r--r--</span> <span class="text-[#c9d1d9] cursor-pointer hover:text-[#00ff9c]" onclick="run('resume')">resume.pdf</span>
   </div>
   <div class="mt-3 text-[11px] text-[#6e7681]">7 files · 42KB</div></div>`;
 }
@@ -432,7 +453,7 @@ function execute(cmd){
     case 'about': 
       print(renderAbout()); setActiveTab('about'); break;
     case 'whoami':
-      print(`<div class="fade-in"><span class="text-[#6e7681]">$ whoami</span><div class="mt-2 text-[#00ff9c]">piyush-dubey — Principal Member of Technical Staff. Type 'about' for the long version.</div></div>`); 
+      print(`<div class="fade-in"><span class="text-[#6e7681]">$ whoami</span><div class="mt-2 text-[#00ff9c]">piyush-dubey — staff-level backend/platform engineer building distributed systems, cloud platforms, and AI agent infrastructure.</div></div>`); 
       setActiveTab('shell'); break;
     case 'experience': case 'exp': 
       print(renderExperience()); setActiveTab('experience'); break;
@@ -452,9 +473,6 @@ function execute(cmd){
       else if(arg==='README.md') print(renderReadme());
       else print(`<div class="fade-in text-[#ff7b72]">cat: ${escapeHtml(arg)}: No such file</div>`);
       break;
-    case 'resume':
-      print(`<div class="fade-in"><div class="text-[#6e7681]">$ resume --download</div><div class="mt-2 text-[#c9d1d9]">Preparing résumé.pdf...</div><div class="text-[#3fb950]">✓ Ready: <span class="lk cursor-pointer" onclick="toast('downloading resume.pdf')">résumé.pdf (84KB)</span></div></div>`);
-      setActiveTab('shell'); break;
     case 'neofetch': print(renderNeofetch()); setActiveTab('shell'); break;
     case 'history':
       print(`<div class="fade-in"><div class="text-[#6e7681]">$ history</div>${history.map((h,i)=>`<div><span class="text-[#6e7681]">${String(i+1).padStart(4,' ')}</span>  <span class="text-[#c9d1d9]">${escapeHtml(h)}</span></div>`).join('')}</div>`);
@@ -596,7 +614,7 @@ function copy(text){
 }
 function openExternal(url, label){
   toast(`opening ${label}`);
-  setTimeout(()=>window.open(url, '_blank', 'noopener,noreferrer'), 900);
+  window.open(url, '_blank', 'noopener,noreferrer');
   return false;
 }
 function toast(msg){
