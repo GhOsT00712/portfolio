@@ -4,4 +4,19 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Cache-Control: public, max-age=60, must-revalidate
-  Cloudflare-CDN-Cache-Control: max-age=24400
+  Cloudflare-CDN-Cache-Control: max-age=86400
+
+/dist/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/script.js
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/styles.css
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/*.svg
+  Cache-Control: public, max-age=604800
+
+/favicon.ico
+  Cache-Control: public, max-age=604800

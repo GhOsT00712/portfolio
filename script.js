@@ -50,15 +50,15 @@ function renderAbout(){
 <div class="text-[#6e7681]">$ cat about.md</div>
 <div class="mt-2 text-[#c9d1d9]">
   <div class="mb-2"><span class="text-[#6e7681]">name:</span> <span class="text-[#f0f6fc]">Piyush Dubey</span></div>
-  <div class="mb-2"><span class="text-[#6e7681]">role:</span> <span class="text-[#3fb950]">Principal Member of Technical Staff @ Oracle Cloud</span></div>
-  <div class="mb-2"><span class="text-[#6e7681]">focus:</span> <span class="text-[#39c5cf]">Platform Engineering · Distributed Systems · Cloud Platforms · AI Agent Infrastructure · Developer Experience</span></div>
+  <div class="mb-2"><span class="text-[#6e7681]">role:</span> <span class="text-[#3fb950]">Principal Platform Software Engineer @ Oracle Cloud</span></div>
+  <div class="mb-2"><span class="text-[#6e7681]">focus:</span> <span class="text-[#39c5cf]">Developer Infrastructure · Distributed Systems · AI Agent Platforms · Cloud Platform Engineering</span></div>
   <div class="mb-2"><span class="text-[#6e7681]">location:</span> Bangalore, India <span class="text-[#6e7681]">·</span> <span class="text-[#3fb950]">open to relocation & visa sponsorship</span></div>
   <div class="mb-2"><span class="text-[#6e7681]">experience:</span> 13+ years</div>
 </div>
 <div class="mt-4 border-t border-[#1f2428] pt-3 max-w-2xl text-[#c9d1d9] leading-relaxed">
-  <p class="mb-2">I am a staff-level backend and platform engineer who builds systems other engineers depend on: cloud control-plane services, event platforms, distributed rate limiting, observability pipelines, retrieval systems, and AI agent runtimes.</p>
-  <p class="mb-2">Across <span class="text-[#58a6ff]">Oracle Cloud</span>, <span class="text-[#58a6ff]">Microsoft 365</span>, and <span class="text-[#58a6ff]">Adobe</span>, I have worked on platform foundations behind OCI developer workflows, Copilot retrieval experiences, and high-throughput globalization systems.</p>
-  <p>I am strongest in environments where reliability, scale, and product velocity all matter at once - the kind of platform work where a good design makes dozens of teams faster.</p>
+  <p class="mb-2">Platform engineer with 13+ years setting technical direction for distributed systems and AI infrastructure. I build systems other engineers depend on: cloud control-plane services, event platforms, distributed rate limiting, observability pipelines, retrieval systems, and AI agent runtimes.</p>
+  <p class="mb-2">Across <span class="text-[#58a6ff]">Oracle Cloud</span>, <span class="text-[#58a6ff]">Microsoft 365</span>, and <span class="text-[#58a6ff]">Adobe</span>, I've architected platforms serving <span class="text-[#00ff9c]">220M+ monthly users</span>, owned an <span class="text-[#00ff9c]">MCP-based AI agent execution platform</span> that cut incident resolution time by 30%, and repeatedly turned per-team point solutions into shared infrastructure adopted across 20+ engineering teams.</p>
+  <p>I'm strongest in environments where reliability, scale, and product velocity all matter at once — the kind of platform work where a good architecture decision makes dozens of teams faster.</p>
 </div>
 <div class="mt-4 grid sm:grid-cols-2 gap-2 max-w-3xl text-[12px]">
   <div class="border border-[#1f2428] p-3">
@@ -71,11 +71,11 @@ function renderAbout(){
   </div>
   <div class="border border-[#1f2428] p-3">
     <div class="text-[#bc8cff] mb-1">recent problems</div>
-    <div class="text-[#c9d1d9]">Durable agent execution, Terraform provider registry flows, event delivery, quota enforcement, and production diagnosis.</div>
+    <div class="text-[#c9d1d9]">Autonomous incident resolution, durable agent execution, Terraform provider registries, multi-region event delivery, distributed rate limiting, and SLO-driven reliability engineering.</div>
   </div>
   <div class="border border-[#1f2428] p-3">
     <div class="text-[#3fb950] mb-1">best fit</div>
-    <div class="text-[#c9d1d9]">Staff/principal backend roles across platform engineering, cloud infrastructure, developer experience, or AI systems.</div>
+    <div class="text-[#c9d1d9]">Principal/staff backend roles across developer infrastructure, cloud platform engineering, AI agent systems, or distributed systems at scale.</div>
   </div>
 </div>
 <div class="mt-4 text-[11px] text-[#6e7681]">
@@ -86,30 +86,29 @@ function renderAbout(){
 
 function renderExperience(){
   const jobs = [
-    {period:'JAN 2025 — PRESENT', role:'Principal Member of Technical Staff', company:'Oracle · Developer Experience Platform', color:'#3fb950',
+    {period:'JAN 2025 — PRESENT', role:'Principal Platform Software Engineer', company:'Oracle · Developer Infrastructure Platform', color:'#3fb950',
      points:[
-       'Provide technical leadership across <span class="text-[#00ff9c]">3 Developer Experience teams</span> building OCI workload orchestration, infrastructure provisioning, and developer productivity platforms.',
-       'Led architecture for Terraform provider distribution through a <span class="text-[#39c5cf]">Terraform Provider Registry</span>, moving OCI provider teams toward self-service regional releases.',
-       'Designed a highly available <span class="text-[#39c5cf]">event-streaming platform</span> processing 5K+ events/sec with durable delivery, fault-tolerant recovery, and adoption across 20+ cloud engineering teams.',
-       'Built observability and error-classification pipelines that surface service-impacting failures and sharpen reliability reviews for critical cloud APIs.',
-       'Designed a Redis-backed <span class="text-[#d29922]">distributed rate limiter</span> handling 10K+ QPS for quota enforcement, tenant isolation, throttling, and shared-state coordination.',
-       'Architected an <span class="text-[#bc8cff]">AI agent execution platform</span> with durable task orchestration, MCP tool integrations, and Codex SDK incident automation that reduced debugging effort by 60%.',
-       'Drive architecture reviews, operational readiness, incident investigations, and mentoring programs for 40+ engineers.',
+       'Set technical direction across <span class="text-[#00ff9c]">3 Developer Infrastructure teams</span> owning cloud workload orchestration, infrastructure provisioning, and developer productivity platforms within OCI.',
+       'Made the architecture call to build a self-service <span class="text-[#39c5cf]">Terraform Provider Registry</span>, decoupling <span class="text-[#00ff9c]">20+ provider teams</span> to release independently per region — collapsing release cycles from <span class="text-[#d29922]">3 months to 1 week (12×)</span> and removing a central org-wide bottleneck.',
+       'Owned the architecture for a highly available <span class="text-[#39c5cf]">event-streaming platform</span> (<span class="text-[#d29922]">5K+ events/sec · 430M+ events/day · &lt;500ms end-to-end latency</span>) adopted as shared infrastructure across 20+ OCI engineering teams.',
+       'Designed the platform-wide throttling layer: a Redis-backed <span class="text-[#d29922]">distributed rate limiter</span> (<span class="text-[#d29922]">10K+ QPS · &lt;5ms p99</span>) for quota enforcement, tenant isolation, and shared-state coordination — now the central rate-limiting primitive for OCI services and AI-agent workloads.',
+       'Architected an <span class="text-[#bc8cff]">AI agent execution platform</span> (durable task orchestration, fault-tolerant execution, MCP tool integration) and shipped an autonomous incident-resolution agent (Codex SDK) that cut debugging effort <span class="text-[#d29922]">60%</span>, resolution time <span class="text-[#d29922]">30%</span>, and restores common failures within <span class="text-[#d29922]">15 minutes</span>.',
+       'Defined the observability strategy for the platform org: built log-ingestion pipelines and automated error-classification that surface the top service-impacting failures across critical workloads, holding latency SLOs below 3s.',
+       'Technical and operational owner of <span class="text-[#00ff9c]">6+ critical cloud services</span>; cross-team authority on architecture reviews, operational readiness, and incident investigations. Mentored <span class="text-[#00ff9c]">40+ engineers</span> through design reviews and technical leadership programs.',
      ]},
     {period:'MAY 2022 — DEC 2024', role:'Senior Software Engineer', company:'Microsoft · Outlook Groups Platform', color:'#d29922',
      points:[
-       'Architected the <span class="text-[#bc8cff]">Outlook Groups retrieval platform</span> powering Copilot search and Q&A experiences across Microsoft 365 collaboration workloads.',
-       'Served platform traffic for products used by <span class="text-[#00ff9c]">220M+ monthly active users</span>, with backend paths optimized for global collaboration scenarios.',
-       'Reduced retrieval and collaboration latency by 70% through query-path redesign, distributed caching, and backend performance work.',
-       'Built lifecycle management capabilities that lowered enterprise infrastructure and subscription costs by ~10% while preserving reliability.',
-       'Led architecture across Outlook, Teams, and SharePoint, and mentored 10+ engineers through design reviews and production readiness work.',
+       'Owned the architecture for the <span class="text-[#bc8cff]">Outlook Groups retrieval platform</span> powering Copilot search and Q&A across Microsoft 365 — on the serving path for <span class="text-[#d29922]">220M+ monthly active users</span>.',
+       'Set and executed the optimization strategy that cut global retrieval and collaboration latency by <span class="text-[#d29922]">70%</span> via distributed caching, query-path redesign, and backend re-architecture across the serving stack.',
+       'Led cross-organizational architecture across Outlook, Teams, and SharePoint, driving alignment on shared platform standards that reduced service fragmentation across three product orgs.',
+       'Shipped lifecycle-management capabilities for Microsoft 365 Groups that cut infrastructure and subscription costs <span class="text-[#d29922]">~10%</span> for enterprise customers with no reliability regression.',
+       'Anchored production incident response and large-scale debugging for globally distributed M365 workloads. Mentored <span class="text-[#00ff9c]">10+ engineers</span> through design reviews spanning backend infrastructure and AI-powered experiences.',
      ]},
     {period:'OCT 2016 — APR 2022', role:'Computer Scientist', company:'Adobe · Globalization Platform', color:'#39c5cf',
      points:[
-       'Built and scaled a real-time <span class="text-[#00ff9c]">translation platform</span> supporting 31 locales and sustaining 50K+ QPS across Adobe products.',
-       'Designed Kafka-based event pipelines with retries, batching, backpressure handling, and dead-letter processing for reliable async workflows.',
-       'Improved localization throughput by decomposing services and turning repeated globalization work into reusable platform capabilities.',
-       'Built LINE messaging integrations that reached 60% adoption across targeted Japan customer segments.',
+       'Designed and scaled Adobe\'s centralized real-time <span class="text-[#00ff9c]">globalization platform</span> (<span class="text-[#d29922]">31 locales · 50K+ QPS</span>), replacing per-product localization with shared infrastructure and cutting <span class="text-[#d29922]">~2 weeks of localization effort per release</span> across 5+ product lines.',
+       'Architected Kafka-based distributed event pipelines (retries, batching, backpressure, dead-letter handling), establishing the async-processing patterns that underpinned platform reliability and scalability.',
+       'Improved resiliency through service decomposition and async processing; delivered LINE messaging integrations reaching <span class="text-[#d29922]">60% adoption</span> in targeted Japan customer segments.',
      ]},
     {period:'MAR 2013 — SEP 2016', role:'Software Engineer', company:'TCS · Healthcare Data', color:'#bc8cff',
      points:[
@@ -117,7 +116,7 @@ function renderExperience(){
      ]},
   ];
   let html = `<div class="fade-in"><div class="text-[#6e7681]">$ cat experience.log</div>
-    <div class="mt-3 mb-2 text-[#f0f6fc] text-base">Engineering Experience <span class="text-[#6e7681]">— platform systems, reliability, AI infrastructure</span></div>`;
+    <div class="mt-3 mb-2 text-[#f0f6fc] text-base">Engineering Experience <span class="text-[#6e7681]">— developer infrastructure, distributed systems, AI agent platforms</span></div>`;
   jobs.forEach((j,i)=>{
     html += `
     <div class="mt-4 border-l-2 pl-4" style="border-color:${j.color}">
@@ -127,8 +126,8 @@ function renderExperience(){
         <span class="text-[#6e7681]">·</span>
         <span style="color:${j.color}" class="font-semibold">${j.company}</span>
       </div>
-      <ul class="mt-2 space-y-1 text-[#c9d1d9]">
-        ${j.points.map(p=>`<li class="flex gap-2"><span class="text-[#3fb950] shrink-0">▸</span><span>${p}</span></li>`).join('')}
+      <ul class="mt-2 space-y-1.5 text-[#c9d1d9] leading-relaxed">
+        ${j.points.map(p=>`<li class="flex gap-2"><span class="text-[#3fb950] shrink-0 mt-0.5">▸</span><span>${p}</span></li>`).join('')}
       </ul>
     </div>`;
   });
@@ -163,11 +162,11 @@ function renderSkills(){
 
 function renderProjects(){
   const projects = [
-    {name:'oci-agent-runtime', tag:'AI Infrastructure · Oracle', desc:'Durable AI agent execution platform with task orchestration, MCP tool integrations, and Codex SDK incident automation for OCI developer workflows.', color:'#bc8cff', impact:'60% less debugging effort on common production investigations'},
-    {name:'event-streaming-platform', tag:'Distributed Systems · Oracle', desc:'Highly available event-streaming layer with durable delivery, recovery mechanics, and adoption across cloud engineering teams handling critical workloads.', color:'#39c5cf', impact:'5K+ events/sec · 20+ teams'},
-    {name:'terraform-provider-registry', tag:'Cloud Platform · Oracle', desc:'Provider distribution architecture that decouples OCI provider teams from centralized releases and moves regional publishing toward self-service delivery.', color:'#d29922', impact:'Faster provider release flow across OCI regions'},
-    {name:'m365-copilot-retrieval', tag:'RAG · Microsoft', desc:'Outlook Groups retrieval platform powering Copilot search and question-answering experiences across Microsoft 365 collaboration workloads.', color:'#58a6ff', impact:'220M+ monthly active users · 70% latency reduction'},
-    {name:'globalization-platform', tag:'High Throughput · Adobe', desc:'Real-time translation and localization platform backed by Kafka pipelines, async workflow patterns, and reusable globalization services.', color:'#00ff9c', impact:'50K+ QPS · 31 locales'},
+    {name:'oci-agent-runtime', tag:'AI Infrastructure · Oracle', desc:'Distributed AI agent execution platform with durable task orchestration, fault-tolerant execution, and MCP-based tool integration. Shipped autonomous incident-resolution agent (Codex SDK) that triages, investigates, and remediates Sev-2 issues autonomously.', color:'#bc8cff', impact:'60% less debugging effort · 30% faster resolution · restores common failures in 15 min'},
+    {name:'event-streaming-platform', tag:'Distributed Systems · Oracle', desc:'Highly available event-streaming layer with durable delivery, fault-tolerant recovery, and end-to-end latency guarantees — adopted as shared infrastructure across OCI engineering teams.', color:'#39c5cf', impact:'5K+ events/sec · 430M+ events/day · <500ms latency · 20+ teams'},
+    {name:'terraform-provider-registry', tag:'Cloud Platform · Oracle', desc:'Self-service provider distribution architecture that decoupled 20+ OCI provider teams from centralized releases, enabling independent regional publishing and eliminating a central org-wide bottleneck.', color:'#d29922', impact:'3 months → 1 week release cycles (12×)'},
+    {name:'m365-copilot-retrieval', tag:'RAG · Microsoft', desc:'Outlook Groups retrieval platform powering Copilot search and Q&A across Microsoft 365 — core design decisions for retrieval at global scale, with distributed caching and query-path re-architecture.', color:'#58a6ff', impact:'220M+ monthly active users · 70% latency reduction'},
+    {name:'globalization-platform', tag:'High Throughput · Adobe', desc:'Centralized real-time globalization platform with Kafka-backed event pipelines replacing per-product localization across Adobe, cutting ~2 weeks of localization effort per release across 5+ product lines.', color:'#00ff9c', impact:'50K+ QPS · 31 locales · 5+ product lines'},
   ];
   let html = `<div class="fade-in"><div class="text-[#6e7681]">$ ls projects/</div>
     <div class="mt-3 mb-3 text-[#f0f6fc]">Selected Platform Work</div>
@@ -235,7 +234,7 @@ function renderReadme(){
   return `<div class="fade-in text-[#c9d1d9]">
 <div class="text-[#6e7681]">$ cat README.md</div>
 <div class="mt-3 text-[#00ff9c] glow text-base"># portfolio.sh</div>
-<p class="mt-2">Interactive terminal-style portfolio for <span class="text-[#58a6ff]">Piyush Dubey</span>, a staff-level backend and platform engineer working across distributed systems, cloud infrastructure, developer experience, and AI agent platforms.</p>
+<p class="mt-2">Interactive terminal-style portfolio for <span class="text-[#58a6ff]">Piyush Dubey</span>, a principal platform software engineer with 13+ years setting technical direction across distributed systems, developer infrastructure, and AI agent platforms at Oracle, Microsoft, and Adobe.</p>
 <div class="mt-3 text-[#d29922]">## Usage</div>
 <pre class="mt-1 text-[12px]">  Type a command and press Enter.
   Try: <span class="text-[#00ff9c]">help</span> · <span class="text-[#00ff9c]">about</span> · <span class="text-[#00ff9c]">experience</span> · <span class="text-[#00ff9c]">connect</span>
@@ -283,7 +282,7 @@ function renderLs(){
     <span class="text-[#3fb950]">-rw-r--r--</span> <span class="text-[#c9d1d9] cursor-pointer hover:text-[#00ff9c]" onclick="run('connect')">contact.vcf</span>
     <span class="text-[#3fb950]">-rw-r--r--</span> <span class="text-[#c9d1d9] cursor-pointer hover:text-[#00ff9c]" onclick="run('cat README.md')">README.md</span>
   </div>
-  <div class="mt-3 text-[11px] text-[#6e7681]">7 files · 42KB</div></div>`;
+  <div class="mt-3 text-[11px] text-[#6e7681]">6 entries · 1 dir · 5 files</div></div>`;
 }
 
 function renderNeofetch(){
@@ -453,7 +452,7 @@ function execute(cmd){
     case 'about': 
       print(renderAbout()); setActiveTab('about'); break;
     case 'whoami':
-      print(`<div class="fade-in"><span class="text-[#6e7681]">$ whoami</span><div class="mt-2 text-[#00ff9c]">piyush-dubey — staff-level backend/platform engineer building distributed systems, cloud platforms, and AI agent infrastructure.</div></div>`); 
+      print(`<div class="fade-in"><span class="text-[#6e7681]">$ whoami</span><div class="mt-2 text-[#00ff9c]">piyush-dubey — principal platform engineer with 13+ years setting technical direction for distributed systems, AI agent infrastructure, and developer experience platforms at Oracle, Microsoft, and Adobe.</div></div>`);
       setActiveTab('shell'); break;
     case 'experience': case 'exp': 
       print(renderExperience()); setActiveTab('experience'); break;
@@ -571,12 +570,13 @@ async function boot(){
     await new Promise(r=>setTimeout(r, delay));
   }
   await new Promise(r=>setTimeout(r, 200));
-  print(renderReadme());
+  print(renderAbout());
+  setActiveTab('about');
   await new Promise(r=>setTimeout(r, 300));
   // hint
   const hint = document.createElement('div');
   hint.className = 'mt-4 text-[12px] text-[#6e7681] fade-in';
-  hint.innerHTML = `Type <span class="text-[#00ff9c] cursor-pointer" onclick="run('help')">help</span> to see available commands, or click a file in the sidebar.`;
+  hint.innerHTML = `Type <span class="text-[#00ff9c] cursor-pointer" onclick="run('help')">help</span> for all commands · <span class="text-[#00ff9c] cursor-pointer" onclick="run('cat README.md')">cat README.md</span> for usage notes`;
   output.appendChild(hint);
   input.focus();
 }
@@ -609,11 +609,23 @@ document.getElementById('sidebar-toggle').onclick = ()=>{
   document.getElementById('sidebar').classList.toggle('open');
 };
 
+function track(event, data = {}){
+  try {
+    const payload = JSON.stringify({ event, location: 'terminal', ...data });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon('/api/track-click', new Blob([payload], { type: 'application/json' }));
+    } else {
+      fetch('/api/track-click', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true }).catch(()=>{});
+    }
+  } catch {}
+}
 function copy(text){
   navigator.clipboard?.writeText(text).then(()=>toast(`copied: ${text}`)).catch(()=>toast('copy failed'));
+  track('copy', { label: text, location: 'contact' });
 }
 function openExternal(url, label){
   toast(`opening ${label}`);
+  track('external_click', { label, href: url, location: 'contact' });
   window.open(url, '_blank', 'noopener,noreferrer');
   return false;
 }
